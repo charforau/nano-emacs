@@ -158,13 +158,13 @@ background color that is barely perceptible."
 (defun nano-faces ()
   "Derive face attributes for nano-faces using nano-theme values."
   (set-face-attribute 'nano-face-default nil
-                      :foreground nano-color-foreground
-                      :background nano-color-background)
+                     :foreground nano-color-foreground
+                     :background nano-color-background)
   (set-face-attribute 'nano-face-critical nil
-                      :foreground nano-color-foreground
-                      :background nano-color-critical)
+                     :foreground nano-color-foreground
+                     :background nano-color-critical)
   (set-face-attribute 'nano-face-popout nil
-                      :foreground nano-color-popout)
+                     :foreground nano-color-popout)
 
   (if (display-graphic-p)
       (set-face-attribute 'nano-face-strong nil
@@ -177,11 +177,11 @@ background color that is barely perceptible."
 
   (set-face-attribute 'nano-face-salient nil
                       :foreground nano-color-salient
-                      :weight 'light)
+                      :weight 'medium)
 
   (set-face-attribute 'nano-face-faded nil
                       :foreground nano-color-faded
-                      :weight 'light)
+                      :weight 'medium)
 
   (set-face-attribute 'nano-face-subtle nil
                       :background nano-color-subtle)
@@ -196,7 +196,7 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-default nil
                       :foreground nano-color-foreground
                       :background nano-color-background
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-foreground
@@ -213,7 +213,7 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-strong nil
                       :foreground nano-color-strong
                       :background nano-color-subtle
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-strong
@@ -229,7 +229,7 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-salient nil
                       :foreground nano-color-background
                       :background nano-color-salient
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-salient
@@ -245,7 +245,7 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-popout nil
                       :foreground nano-color-background
                       :background nano-color-popout
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-popout
@@ -261,7 +261,7 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-faded nil
                       :foreground nano-color-background
                       :background nano-color-faded
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-faded
@@ -278,21 +278,22 @@ background color that is barely perceptible."
   (set-face-attribute 'nano-face-tag-critical nil
                       :foreground nano-color-background
                       :background nano-color-critical
-                      :family "Roboto Mono" :weight 'regular
+                      :family "Roboto Mono" :weight 'medium
                       :height (if (display-graphic-p) 120 1)
                       :box `(:line-width 1
                                          :color ,nano-color-critical
                                          :style nil))
 
   (set-face-attribute 'nano-face-header-separator nil
-                      :inherit 'nano-face-default
-                      :height 0.1)
+                     :inherit 'nano-face-default
+                     :height 0.1)
   (set-face-attribute 'nano-face-header-filler nil
-                      :inherit 'nano-face-header-default
-                      :height 0.1)
+                     :inherit 'nano-face-header-default
+                     :height 0.1)
   (set-face-attribute 'nano-face-header-highlight nil
-                      :inherit 'nano-face-header-faded
-                      :box nil))
+                     :inherit 'nano-face-header-faded
+                     :box nil)
+  )
 
 (provide 'nano-faces)
 ;;; nano-faces.el ends here

@@ -18,16 +18,19 @@
 
 (setq default-frame-alist
       (append (list
-	       '(font . "Roboto Mono:style=Light:size=14")
+	       ;;'(font . "Roboto Mono:style=Light:size=14")
+	       ;;'(font . "Roboto Mono:style=Medium:size=14")
+	       ;;'(font . "Cascadia Mono Regular:style=Medium:size=14")
 	       ;; '(font . "Roboto Mono Emacs Regular:size=14")
-	       '(min-height . 1)  '(height     . 45)
-	       '(min-width  . 1) '(width      . 81)
+	       ;'(min-height . 1)  '(height     . 45)
+	       ;'(min-width  . 1) '(width      . 81)
                '(vertical-scroll-bars . nil)
                '(internal-border-width . 24)
                '(left-fringe    . 0)
                '(right-fringe   . 0)
                '(tool-bar-lines . 0)
-               '(menu-bar-lines . 0))))
+               '(menu-bar-lines . 0)
+	       )))
 
 ;; on OSX, type the line below (in terminal) to get a 1 pixel border
 ;; defaults write com.apple.universalaccess increaseContrast -bool YES
@@ -39,12 +42,12 @@
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 3 (strong)
 
 ;; Fall back font for glyph missing in Roboto
-(defface fallback '((t :family "Fira Code"
-                       :inherit 'nano-face-faded)) "Fallback")
-(set-display-table-slot standard-display-table 'truncation
-                        (make-glyph-code ?… 'fallback))
-(set-display-table-slot standard-display-table 'wrap
-                         (make-glyph-code ?↩ 'fallback))
+;;(defface fallback '((t :family "Fira Code"
+;;                       :inherit 'nano-face-faded)) "Fallback")
+;;(set-display-table-slot standard-display-table 'truncation
+;;                        (make-glyph-code ?… 'fallback))
+;;(set-display-table-slot standard-display-table 'wrap
+;;                         (make-glyph-code ?↩ 'fallback))
 
 ;; (set-fontset-font t nil "Fira Code" nil 'append)
 

@@ -89,7 +89,7 @@
 
   ;; General
   (set-face 'buffer-menu-buffer                       'nano-face-strong)
-  (set-face 'minibuffer-prompt                        'nano-face-strong)
+  ;;(set-face 'minibuffer-prompt                        'nano-face-strong)
   (set-face 'link                                    'nano-face-salient)
   (set-face 'fringe                                    'nano-face-faded)
   (set-face-attribute 'fringe nil
@@ -104,7 +104,74 @@
   (set-face-attribute 'tooltip nil                         :height 0.85)
   (set-face 'secondary-selection                      'nano-face-subtle)
   (set-face 'completions-common-part                   'nano-face-faded)
-  (set-face 'completions-first-difference            'nano-face-default))
+  (set-face 'completions-first-difference            'nano-face-default)
+
+  )
+
+(defun nano-theme--basics-m ()
+  "Derive basic Emacs faces from nano-faces and nano-color-theme."
+
+  ;; (set-foreground-color nano-color-foreground)
+  ;; (set-background-color nano-color-background)
+
+  ;; ;; XXX the following seems to be a no-op, should it be removed?
+  ;; (set-face-attribute 'default nil
+  ;;                     :foreground (face-foreground 'default)
+  ;;                     :background (face-background 'default))
+
+  ;; (if (display-graphic-p)
+  ;;     (set-face-attribute 'bold nil :weight 'regular)
+  ;;   (set-face-attribute 'bold nil :weight 'bold))
+
+  ;; ;; Structural
+  ;; (set-face 'bold                                     'nano-face-strong)
+  ;; (set-face 'italic                                    'nano-face-faded)
+  ;; (set-face 'bold-italic                              'nano-face-strong)
+  ;; (set-face 'region                                   'nano-face-subtle)
+  ;; (set-face 'highlight                                'nano-face-subtle)
+  ;; ;;(set-face 'fixed-pitch                                     'default)
+  ;; (set-face 'fixed-pitch-serif                       'nano-face-default)
+  ;; (set-face 'variable-pitch                          'nano-face-default)
+  ;; (set-face 'cursor                                  'nano-face-default)
+
+  ;; (set-face-attribute 'cursor nil
+  ;;                     :background (face-foreground 'nano-face-default))
+   (set-face-attribute 'window-divider nil
+                       :foreground (face-background 'nano-face-default))
+   (set-face-attribute 'window-divider-first-pixel nil
+                       :foreground nano-color-background)
+   ;;                  :foreground (face-background 'nano-face-subtle))
+   (set-face-attribute 'window-divider-last-pixel nil
+                       :foreground nano-color-background)
+   ;;                  :foreground (face-background 'nano-face-subtle)))
+
+  ;; ;; Semantic
+  ;; (set-face 'shadow                                    'nano-face-faded)
+  ;; (set-face 'success                                 'nano-face-salient)
+  ;; (set-face 'warning                                  'nano-face-popout)
+  ;; (set-face 'error                                  'nano-face-critical)
+  ;; (set-face 'match                                    'nano-face-popout)
+
+  ;; ;; General
+  (set-face 'buffer-menu-buffer                       'nano-face-strong)
+  ;; ;;(set-face 'minibuffer-prompt                        'nano-face-strong)
+  ;; (set-face 'link                                    'nano-face-salient)
+  (set-face 'fringe                                    'nano-face-faded)
+  (set-face-attribute 'fringe nil
+                       :foreground (face-background 'nano-face-subtle)
+                       :background (face-background 'default))
+  ;; (set-face 'isearch                                  'nano-face-strong)
+  ;; (set-face 'isearch-fail                              'nano-face-faded)
+  ;; (set-face 'lazy-highlight                           'nano-face-subtle)
+  ;; (set-face 'trailing-whitespace                      'nano-face-subtle)
+  ;; (set-face 'show-paren-match                         'nano-face-popout)
+  ;; (set-face 'show-paren-mismatch                           'face-normal)
+  ;; (set-face-attribute 'tooltip nil                         :height 0.85)
+  ;; (set-face 'secondary-selection                      'nano-face-subtle)
+  ;; (set-face 'completions-common-part                   'nano-face-faded)
+  ;; (set-face 'completions-first-difference            'nano-face-default)
+
+  )
 
 
 (defun nano-theme--font-lock ()
@@ -139,19 +206,19 @@
                       :inherit nil
                       :box nil)
   ;;(when (display-graphic-p)
-  (set-face-attribute 'header-line nil
-                       :weight 'light
-                       :foreground (face-foreground 'nano-face-default)
-                       :background (face-background 'nano-face-default)
-
-                       :overline nil
-                       :underline nil
-                       :box nil
-                       :box `(:line-width 1
-                                          :color ,(face-background 'nano-face-default)
-                                          :style nil)
-                       :inherit nil)
-
+  ;;(set-face-attribute 'header-line nil
+  ;;                    :weight 'light
+  ;;                    :foreground (face-foreground 'nano-face-default)
+  ;;                    :background (face-background 'nano-face-default)
+	;;	      
+        ;;              :overline nil
+        ;;              :underline nil
+        ;;              :box nil
+        ;;              :box `(:line-width 1
+        ;;                                 :color ,(face-background 'nano-face-default)
+        ;;                                 :style nil)
+        ;;              :inherit nil)
+  
   ;; (when (not (display-graphic-p))
   ;;   (set-face-attribute 'header-line nil
   ;;                    :weight 'light
@@ -167,7 +234,8 @@
   ;;                     :background (face-foreground 'nano-face-default))
 
   (set-face-attribute 'internal-border nil
-                       :background (face-background 'nano-face-default)))
+                      :background (face-background 'nano-face-default))
+  )
 
 
 (defun nano-theme--minibuffer ()
@@ -657,12 +725,12 @@ function is a convenience wrapper used by `describe-package-1'."
     (set-face 'helm-source-header                              'nano-face-salient)
     (set-face 'helm-swoop-target-line-face   '(nano-face-strong nano-face-subtle))
     (set-face 'helm-visible-mark                                'nano-face-strong)
-    (set-face 'helm-moccur-buffer                               'nano-face-strong)
-    (set-face 'helm-ff-file                                      'nano-face-faded)
-    (set-face 'helm-ff-prefix                                   'nano-face-strong)
-    (set-face 'helm-ff-dotted-directory                          'nano-face-faded)
-    (set-face 'helm-ff-directory                                'nano-face-strong)
-    (set-face 'helm-ff-executable                               'nano-face-popout)
+    ;(set-face 'helm-moccur-buffer                               'nano-face-strong)
+    ;(set-face 'helm-ff-file                                      'nano-face-faded)
+    ;(set-face 'helm-ff-prefix                                   'nano-face-strong)
+    ;(set-face 'helm-ff-dotted-directory                          'nano-face-faded)
+    ;(set-face 'helm-ff-directory                                'nano-face-strong)
+    ;(set-face 'helm-ff-executable                               'nano-face-popout)
     (set-face 'helm-grep-match                                  'nano-face-strong)
     (set-face 'helm-grep-file                                    'nano-face-faded)
     (set-face 'helm-grep-lineno                                  'nano-face-faded)
@@ -670,32 +738,33 @@ function is a convenience wrapper used by `describe-package-1'."
 
 (defun nano-theme ()
   "Derive many, many faces from the core nano faces."
-  (nano-theme--basics)
-  (nano-theme--font-lock)
+  (nano-theme--basics-m)
+  ;; (nano-theme--font-lock)
   (nano-theme--mode-line)
-  (nano-theme--minibuffer)
-  (nano-theme--buttons)
-  (nano-theme--info)
-  (nano-theme--bookmark)
-  (nano-theme--speedbar)
-  (nano-theme--message)
-  (nano-theme--outline)
-  (nano-theme--customize)
-  (nano-theme--package)
-  (nano-theme--flyspell)
-  (nano-theme--ido)
-  (nano-theme--diff)
-  (nano-theme--term)
-  (nano-theme--calendar)
-  (nano-theme--agenda)
-  (nano-theme--org)
-  (nano-theme--mu4e)
-  (nano-theme--elfeed)
-  (nano-theme--rst)
-  (nano-theme--markdown)
-  (nano-theme--ivy)
-  (nano-theme--helm)
-  (nano-theme--hl-line))
+  ;; (nano-theme--minibuffer)
+  ;; (nano-theme--buttons)
+  ;; (nano-theme--info)
+  ;; (nano-theme--bookmark)
+  ;; (nano-theme--speedbar)
+  ;; (nano-theme--message)
+  ;; (nano-theme--outline)
+  ;; (nano-theme--customize)
+  ;; (nano-theme--package)
+  ;; (nano-theme--flyspell)
+  ;; (nano-theme--ido)
+  ;; (nano-theme--diff)
+  ;; (nano-theme--term)
+  ;; (nano-theme--calendar)
+  ;; (nano-theme--agenda)
+  ;; (nano-theme--org)
+  ;; (nano-theme--mu4e)
+  ;; (nano-theme--elfeed)
+  ;; (nano-theme--rst)
+  ;; (nano-theme--markdown)
+  ;; (nano-theme--ivy)
+  ;; (nano-theme--helm)
+  ;; (nano-theme--hl-line)
+  )
 
 
 (provide 'nano-theme)

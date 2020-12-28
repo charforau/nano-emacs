@@ -22,7 +22,7 @@
 (add-to-list 'load-path ".")
 
 ;; Window layout (optional)
-(require 'nano-layout)
+;;(require 'nano-layout)
 
 ;; Theming Command line options (this will cancel warning messages)
 (add-to-list 'command-switch-alist '("-dark"   . (lambda (args))))
